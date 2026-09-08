@@ -1,0 +1,5 @@
+<svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="#fff" d="M0 0h512v512H0" />
+    <use fill="#f05" href="#tiktok_t" x="18" y="15" />
+    <path id="tiktok_t" fill="#0ee" d="M219 265a54 54 0 1 0 37 51V64h64a88 88 0 0 0 88 88v63a150 150 0 0 1-88-28v128a117 117 0 1 1-101-115" />
+</svg>

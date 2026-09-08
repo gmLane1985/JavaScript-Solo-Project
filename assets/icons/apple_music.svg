@@ -1,0 +1,8 @@
+<svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="url(#apple_music_g)" d="M0 0h512v512H0" />
+    <linearGradient id="apple_music_g" x1="0" x2="0" y1="0.99" y2="0.02">
+        <stop offset="0" stop-color="#fa233b" />
+        <stop offset="1" stop-color="#fb5c74" />
+    </linearGradient>
+    <path fill="#fff" d="M347 160q11-2 12 10v122q0 15-45 20c-57 9-48 105 30 79 30-11 35-40 35-69V88c0 0 0-20-17-15l-170 35c0 0-13 2-13 18v203q0 15-45 20c-57 9-48 105 30 79 30-11 35-40 35-69V199q0-9 10-11" />
+</svg>

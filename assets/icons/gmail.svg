@@ -1,0 +1,8 @@
+<svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="#fff" d="M0 0h512v512H0" />
+    <path fill="#4285f4" d="M76 190v171q0 30 30 30h52V190" />
+    <path fill="#34a853" d="M354 190v201h52q30 0 30-30V190" />
+    <path fill="#fbbc04" d="M350 255V149l28-21c24-18 58 2 58 30v32" />
+    <path fill="#ea4335" d="M154 249V143l102 77 98-74v106l-98 74" />
+    <path fill="#c5221f" d="M76 190v-32c0-29 34-48 58-30l24 18v106" />
+</svg>

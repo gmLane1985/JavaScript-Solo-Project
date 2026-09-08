@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" fill="#ebebeb" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="#231f20" d="M0 0h512v512H0" />
+    <path d="M183 280l41 28 27 41 87-62-94-96" />
+    <circle cx="340" cy="190" r="49" />
+    <g stroke="#ebebeb" fill="none">
+        <circle stroke-width="19" cx="179" cy="352" r="63" />
+        <path stroke-width="80" stroke-linecap="round" d="M-18 271l195 81" />
+        <circle stroke-width="32" cx="340" cy="190" r="81" />
+    </g>
+</svg>

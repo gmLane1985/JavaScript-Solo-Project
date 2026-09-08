@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" fill="#fff" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M0 0h512v512H0" />
+    <mask id="google_maps_a">
+        <path d="M122 198c0 70 40 105 77 154s40 73 44 83 6 13 13 13 10-3 13-13 7-34 44-83 77-84 77-153a1 1 0 0 0-268-2M205 197a51 51 0 1 1 0 2" />
+    </mask>
+    <g mask="url(#google_maps_a)" stroke-width="130">
+        <path stroke="#fbbc04" d="M104 379 256 198" />
+        <path stroke="#4285f4" d="M256 198 378 53" />
+        <path stroke="#34a853" d="M189 459 432 169" />
+        <path stroke="#1a73e8" d="M176 53l79 67" />
+        <path stroke="#ea4335" d="M76 232l91-109" />
+    </g>
+</svg>
