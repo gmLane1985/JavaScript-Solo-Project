@@ -14,3 +14,98 @@ body {
 h1 {
   margin: 15px 0 20px;
 }
+
+#piglatin {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+#convertBtn {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid var(--golden-yellow);
+  border-radius: 8px;
+  transition: background-image 150ms ease;
+}
+
+#convertBtn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+}
+
+#output {
+  margin-top: 15px;
+  padding: 12px 15px;
+  min-height: 1.2rem;
+  background-color: #1c1c3d;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+#output:empty {
+  display: none;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  padding-block: 1rem;
+}
+
+footer > .page-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  text-align: left;
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+  padding-left: 1rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  padding-right: 1rem;
+}
+
+.social-links a {
+  display: block;
+  opacity: 0.75;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-links a:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.social-media-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
