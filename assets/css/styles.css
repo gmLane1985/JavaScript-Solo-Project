@@ -6,9 +6,9 @@
 }
 
 body {
-  background-color: var(--very-dark-blue);
+  background-color: var(--white);
   text-align: center;
-  color: var(--white);
+  color: var(--very-dark-blue);
 }
 
 h1 {
@@ -17,6 +17,8 @@ h1 {
 
 #rps-section {
   width: 80%;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   margin: 20px auto;
