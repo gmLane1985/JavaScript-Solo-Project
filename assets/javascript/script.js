@@ -1,44 +1,10 @@
-// copyright
+// -------------------- copyright --------------------
 const copyrightYear = document.querySelector('#copyright-year');
 if (copyrightYear) {
   copyrightYear.textContent = new Date().getFullYear();
 }
 
-// caesar
-function caesarCipher(text, shift) {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  const lowerText = text.toLowerCase();
-  let result = '';
-
-  for (let index = 0; index < lowerText.length; index++) {
-    const character = lowerText[index];
-    if (!alphabet.includes(character)) {
-      result += character;
-      continue;
-    }
-
-    let newIndex = (alphabet.indexOf(character) + shift) % 26;
-    if (newIndex < 0) newIndex += 26;
-    result += alphabet[newIndex];
-  }
-
-  return result;
-}
-
-document.querySelector('#caesar_cipherBtn').addEventListener('click', () => {
-  const text = document.querySelector('#caesar_cipherInput').value;
-  const shift = parseInt(
-    document.querySelector('#caesar_shiftInput').value,
-    10,
-  );
-
-  document.querySelector('#caesar_cipherOutput').innerText = caesarCipher(
-    text,
-    shift,
-  );
-});
-
-// rock paper scissors
+// -------------------- rock paper scissors --------------------
 function getRandomComputerResult() {
   const options = ['Rock', 'Paper', 'Scissors'];
   const randomIndex = Math.floor(Math.random() * options.length);
@@ -118,7 +84,8 @@ document.querySelector('#scissors-btn').addEventListener('click', () => {
   showResults('Scissors');
 });
 
-// pig latin
+// -------------------- pig latin --------------------
+
 function toPigLatin(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   const punctuationMatch = word.match(/[.!?]+$/);
@@ -154,4 +121,38 @@ document.querySelector('#convertBtn').addEventListener('click', () => {
   const input = document.querySelector('#userInput').value;
   const result = convertSentence(input);
   document.querySelector('#output').innerText = result;
+});
+
+// -------------------- caesar --------------------
+function caesarCipher(text, shift) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const lowerText = text.toLowerCase();
+  let result = '';
+
+  for (let index = 0; index < lowerText.length; index++) {
+    const character = lowerText[index];
+    if (!alphabet.includes(character)) {
+      result += character;
+      continue;
+    }
+
+    let newIndex = (alphabet.indexOf(character) + shift) % 26;
+    if (newIndex < 0) newIndex += 26;
+    result += alphabet[newIndex];
+  }
+
+  return result;
+}
+
+document.querySelector('#caesar_cipherBtn').addEventListener('click', () => {
+  const text = document.querySelector('#caesar_cipherInput').value;
+  const shift = parseInt(
+    document.querySelector('#caesar_shiftInput').value,
+    10,
+  );
+
+  document.querySelector('#caesar_cipherOutput').innerText = caesarCipher(
+    text,
+    shift,
+  );
 });
