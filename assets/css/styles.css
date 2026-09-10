@@ -1,14 +1,21 @@
 :root {
   --very-dark-blue: #0a0a23;
   --white: #ffffff;
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
+  --green: #0ea106;
+  --bright-green: #1fbd07;
 }
 
 body {
+  font-family: 'Text Me One', sans-serif;
   background-color: var(--white);
   text-align: center;
   color: var(--very-dark-blue);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Audiowide', sans-serif;
 }
 
 h1 {
@@ -32,15 +39,15 @@ h1 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--very-dark-blue);
-  background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border: 3px solid var(--golden-yellow);
+  background-color: var(--bright-green);
+  background-image: linear-gradient(var(--green), var(--bright-green));
+  border: 3px solid var(--bright-green);
   border-radius: 8px;
   transition: background-image 150ms ease;
 }
 
 #convertBtn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
+  background-image: linear-gradient(var(--green), var(--bright-green));
 }
 
 #output {
@@ -56,7 +63,7 @@ h1 {
 }
 
 #output:empty {
-  display: none;
+  visibility: hidden;
   margin: 20px auto;
   padding: 20px;
 }
@@ -66,21 +73,21 @@ h1 {
   width: 100px;
   margin: 10px;
   color: var(--very-dark-blue);
-  background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border-color: var(--golden-yellow);
+  background-color: var(--bright-green);
+  background-image: linear-gradient(var(--green), var(--bright-green));
+  border-color: var(--bright-green);
   border-width: 3px;
 }
 
 .rps_btn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
+  background-image: linear-gradient(var(--green), var(--bright-green));
 }
 
 .rps_rules-container {
   padding: 10px 0;
   margin: auto;
   border-radius: 15px;
-  border: 5px solid var(--yellow);
+  border: 5px solid var(--green);
   background-color: var(--white);
   color: var(--very-dark-blue);
 }
@@ -134,6 +141,35 @@ h1 {
   border-radius: 15px;
 }
 
+#caesar_section {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+#caesar_cipherBtn {
+  display: block;
+  cursor: pointer;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  background-color: var(--bright-green);
+  background-image: linear-gradient(var(--green), var(--bright-green));
+  border: 3px solid var(--bright-green);
+  border-radius: 8px;
+  transition: background-image 150ms ease;
+}
+
+#caesar_cipherBtn:hover {
+  background-image: linear-gradient(var(--green), var(--bright-green));
+}
+
 #convertBtn {
   cursor: pointer;
   margin-top: 10px;
@@ -141,15 +177,15 @@ h1 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--very-dark-blue);
-  background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border: 3px solid var(--golden-yellow);
+  background-color: var(--bright-green);
+  background-image: linear-gradient(var(--green), var(--bright-green));
+  border: 3px solid var(--bright-green);
   border-radius: 8px;
   transition: background-image 150ms ease;
 }
 
 #convertBtn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
+  background-image: linear-gradient(var(--green), var(--bright-green));
 }
 
 #output {
@@ -164,10 +200,30 @@ h1 {
   font-size: 1.05rem;
 }
 
-#output:empty {
-  display: none;
+#output:empty,
+#caesar_cipherOutput:empty {
+  visibility: hidden;
   margin: 20px auto;
   padding: 20px;
+}
+
+#output,
+#caesar_cipherOutput {
+  display: block;
+  min-height: 1.2rem;
+  margin: 15px 0 0;
+  padding: 12px 15px;
+  background-color: #1c1c3d;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+#output:empty,
+#caesar_cipherOutput:empty {
+  visibility: hidden;
 }
 
 footer {
