@@ -30,7 +30,7 @@ const winActions = {
     Paper: 'eats',
   },
   Spock: {
-    Scissors: 'breaksgit checkout main',
+    Scissors: 'breaks',
     Rock: 'vaporizes',
   },
 };
