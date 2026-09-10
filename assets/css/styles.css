@@ -166,6 +166,12 @@ h1 {
 .rpsls_results-container {
   font-size: 1.3rem;
   margin: 15px 0;
+  min-height: 7.5rem;
+}
+
+#results-msg,
+#winner-msg {
+  min-height: 1.5em;
 }
 
 #winner-msg {
