@@ -1,6 +1,51 @@
-#caesar {
+:root {
+  --very-dark-blue: #0a0a23;
+  --white: #ffffff;
+  --yellow: #f1be32;
+  --golden-yellow: #feac32;
+}
+
+body {
+  background-color: var(--white);
+  text-align: center;
+  color: var(--very-dark-blue);
+}
+
+h1 {
+  margin: 15px 0 20px;
+}
+
+#caesar_section {
   width: 80%;
   margin: 20px auto;
+  padding: 20px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+#caesar_cipherBtn {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid var(--golden-yellow);
+  border-radius: 8px;
+  transition: background-image 150ms ease;
+}
+
+#caesar_cipherBtn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+}
+
+#caesar_cipherBtn:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
 }
 
 footer {
