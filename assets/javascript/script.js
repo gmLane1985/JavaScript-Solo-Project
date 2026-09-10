@@ -30,12 +30,11 @@ const winActions = {
     Paper: 'eats',
   },
   Spock: {
-    Scissors: 'breaks',
+    Scissors: 'breaksgit checkout main',
     Rock: 'vaporizes',
   },
 };
 
-// --- WIN LOGIC ---
 function hasPlayerWonTheRound(player, computer) {
   return winActions[player] && winActions[player][computer];
 }
@@ -43,29 +42,24 @@ function hasPlayerWonTheRound(player, computer) {
 let playerScore = 0;
 let computerScore = 0;
 
-// --- ROUND RESULTS ---
 function getRoundResults(userOption) {
   const computerResult = getRandomComputerResult();
 
-  // Player wins
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
     const verb = winActions[userOption][computerResult];
     return `Player wins! ${userOption} ${verb} ${computerResult}`;
   }
 
-  // Tie
   if (computerResult === userOption) {
     return `It's a tie! Both chose ${userOption}`;
   }
 
-  // Computer wins
   const verb = winActions[computerResult][userOption];
   computerScore++;
   return `Computer wins! ${computerResult} ${verb} ${userOption}`;
 }
 
-// --- DOM ELEMENTS ---
 const playerScoreSpanElement = document.querySelector('#player-score');
 const computerScoreSpanElement = document.querySelector('#computer-score');
 const roundResultsMsg = document.querySelector('#results-msg');
@@ -73,7 +67,6 @@ const winnerMsgElement = document.querySelector('#winner-msg');
 const optionsContainer = document.querySelector('.rps_options-container');
 const resetGameBtn = document.querySelector('#reset-game-btn');
 
-// --- SHOW RESULTS ---
 function showResults(userOption) {
   roundResultsMsg.innerText = getRoundResults(userOption);
   computerScoreSpanElement.innerText = computerScore;
@@ -89,7 +82,6 @@ function showResults(userOption) {
   }
 }
 
-// --- RESET GAME ---
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
