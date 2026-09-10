@@ -110,7 +110,7 @@ h1 {
 .rpsls_btn {
   cursor: pointer;
   width: 100px;
-  margin: 10px;
+  margin: 20px;
   color: var(--very-dark-blue);
   background-color: var(--bright-green);
   background-image: linear-gradient(var(--green), var(--bright-green));
