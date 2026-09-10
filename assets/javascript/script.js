@@ -1,13 +1,10 @@
 // copyright
-
 const copyrightYear = document.querySelector('#copyright-year');
-
 if (copyrightYear) {
   copyrightYear.textContent = new Date().getFullYear();
 }
 
 // caesar
-
 function caesarCipher(text, shift) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const lowerText = text.toLowerCase();
@@ -28,19 +25,20 @@ function caesarCipher(text, shift) {
   return result;
 }
 
-document.getElementById('caesar_cipherBtn').addEventListener('click', () => {
-  const text = document.getElementById('caesar_cipherInput').value;
+document.querySelector('#caesar_cipherBtn').addEventListener('click', () => {
+  const text = document.querySelector('#caesar_cipherInput').value;
   const shift = parseInt(
-    document.getElementById('caesar_shiftInput').value,
+    document.querySelector('#caesar_shiftInput').value,
     10,
   );
-  document.getElementById('caesar_cipherOutput').innerText = caesarCipher(
+
+  document.querySelector('#caesar_cipherOutput').innerText = caesarCipher(
     text,
     shift,
   );
 });
-// rock paper scissors
 
+// rock paper scissors
 function getRandomComputerResult() {
   const options = ['Rock', 'Paper', 'Scissors'];
   const randomIndex = Math.floor(Math.random() * options.length);
@@ -72,12 +70,12 @@ function getRoundResults(userOption) {
   }
 }
 
-const playerScoreSpanElement = document.getElementById('player-score');
-const computerScoreSpanElement = document.getElementById('computer-score');
-const roundResultsMsg = document.getElementById('results-msg');
-const winnerMsgElement = document.getElementById('winner-msg');
+const playerScoreSpanElement = document.querySelector('#player-score');
+const computerScoreSpanElement = document.querySelector('#computer-score');
+const roundResultsMsg = document.querySelector('#results-msg');
+const winnerMsgElement = document.querySelector('#winner-msg');
 const optionsContainer = document.querySelector('.rps_options-container');
-const resetGameBtn = document.getElementById('reset-game-btn');
+const resetGameBtn = document.querySelector('#reset-game-btn');
 
 function showResults(userOption) {
   roundResultsMsg.innerText = getRoundResults(userOption);
@@ -93,6 +91,7 @@ function showResults(userOption) {
     optionsContainer.style.display = 'none';
   }
 }
+
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
@@ -107,24 +106,19 @@ function resetGame() {
 
 resetGameBtn.addEventListener('click', resetGame);
 
-const rockBtn = document.getElementById('rock-btn');
-const paperBtn = document.getElementById('paper-btn');
-const scissorsBtn = document.getElementById('scissors-btn');
-
-rockBtn.addEventListener('click', function () {
+document.querySelector('#rock-btn').addEventListener('click', () => {
   showResults('Rock');
 });
 
-paperBtn.addEventListener('click', function () {
+document.querySelector('#paper-btn').addEventListener('click', () => {
   showResults('Paper');
 });
 
-scissorsBtn.addEventListener('click', function () {
+document.querySelector('#scissors-btn').addEventListener('click', () => {
   showResults('Scissors');
 });
 
-//pig latin
-
+// pig latin
 function toPigLatin(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   const punctuationMatch = word.match(/[.!?]+$/);
@@ -156,8 +150,8 @@ function convertSentence(sentence) {
   return sentence.split(' ').map(toPigLatin).join(' ');
 }
 
-document.getElementById('convertBtn').addEventListener('click', () => {
-  const input = document.getElementById('userInput').value;
+document.querySelector('#convertBtn').addEventListener('click', () => {
+  const input = document.querySelector('#userInput').value;
   const result = convertSentence(input);
-  document.getElementById('output').innerText = result;
+  document.querySelector('#output').innerText = result;
 });
