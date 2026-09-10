@@ -11,23 +11,6 @@
     <main>
       <section id="intro-section">
         <h1>JavaScript Solo Project - Garrett Lane</h1>
-    </section>
-<section id="rps"></section>
-<section id="piglatin">
-      <h2>Pig Latin Converter</h2>
-
-<section id="caesar_section">
-    <h2>Caesar Cipher Encryption</h2>
-
-<input id="caesar_cipherInput" type="text" placeholder="Enter phrase…" style="width:100%; padding:10px;">
-
-<input id="caesar_shiftInput" type="number" placeholder="Shift amount (e.g., 3 or -2)" style="width:100%; padding:10px; margin-top:10px;">
-
-<button id="caesar_cipherBtn">Encrypt</button>
-
-<div id="caesar_cipherOutput" style="margin-top:20px; padding:10px; background:#f0f0f0; border-radius:6px;"></div>
-  <input id="userInput" type="text" placeholder="Type your sentence…" style="width:100%; padding:10px;">
-  <button id="convertBtn">Convert</button>
       </section>
       <section id="rps-section">
         <h2>Let's play Rock, Paper, Scissors!</h2>
@@ -76,10 +59,35 @@
           <button class="rps_btn" id="reset-game-btn">Play again?</button>
         </div>
       </section>
-    </main>
+      <section id="piglatin">
+        <h2>Pig Latin Converter</h2>
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Type your sentence…"
+          style="width: 100%; padding: 10px"
+        />
+        <button id="convertBtn">Convert</button>
+        <div id="output"></div>
+      </section>
 
-  <div id="output"></div>
-</section>
+      <section id="caesar"></section>
+      <section id="caesar_section">
+        <h2>Caesar Cipher Encryption</h2>
+        <input
+          id="caesar_cipherInput"
+          type="text"
+          placeholder="Enter phrase..."
+        />
+        <input
+          id="caesar_shiftInput"
+          type="number"
+          placeholder="Shift amount (e.g., 3 or -2)"
+        />
+        <button id="caesar_cipherBtn">Encrypt</button>
+        <div id="caesar_cipherOutput"></div>
+      </section>
+    </main>
     <footer>
       <div class="page-width">
         <div class="footer-info">

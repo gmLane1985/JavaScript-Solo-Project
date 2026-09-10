@@ -6,28 +6,22 @@ if (copyrightYear) {
   copyrightYear.textContent = new Date().getFullYear();
 }
 
-//caesar
+// caesar
 
 function caesarCipher(text, shift) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const lowerText = text.toLowerCase();
   let result = '';
 
-  for (let i = 0; i < lowerText.length; i++) {
-    const char = lowerText[i];
-
-    if (!alphabet.includes(char)) {
-      result += char;
+  for (let index = 0; index < lowerText.length; index++) {
+    const character = lowerText[index];
+    if (!alphabet.includes(character)) {
+      result += character;
       continue;
     }
 
-    const oldIndex = alphabet.indexOf(char);
-    let newIndex = (oldIndex + shift) % 26;
-
-    if (newIndex < 0) {
-      newIndex += 26;
-    }
-
+    let newIndex = (alphabet.indexOf(character) + shift) % 26;
+    if (newIndex < 0) newIndex += 26;
     result += alphabet[newIndex];
   }
 
@@ -36,47 +30,15 @@ function caesarCipher(text, shift) {
 
 document.getElementById('caesar_cipherBtn').addEventListener('click', () => {
   const text = document.getElementById('caesar_cipherInput').value;
-  const shift = parseInt(document.getElementById('caesar_shiftInput').value);
-
-  const encrypted = caesarCipher(text, shift);
-  document.getElementById('caesar_cipherOutput').innerText = encrypted;
-//pig latin
-
-function toPigLatin(word) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  const punctuationMatch = word.match(/[.!?]+$/);
-  const punctuation = punctuationMatch ? punctuationMatch[0] : '';
-  const core = punctuation ? word.slice(0, -punctuation.length) : word;
-  const lower = core.toLowerCase();
-
-  if (vowels.includes(lower[0])) {
-    return core + 'way' + punctuation;
-  }
-
-  let consonantClusterEnd = 0;
-  while (
-    consonantClusterEnd < core.length &&
-    !vowels.includes(lower[consonantClusterEnd])
-  ) {
-    consonantClusterEnd++;
-  }
-
-  return (
-    core.slice(consonantClusterEnd) +
-    core.slice(0, consonantClusterEnd) +
-    'ay' +
-    punctuation
+  const shift = parseInt(
+    document.getElementById('caesar_shiftInput').value,
+    10,
   );
-}
-
-function convertSentence(sentence) {
-  return sentence.split(' ').map(toPigLatin).join(' ');
-}
-
-document.getElementById('convertBtn').addEventListener('click', () => {
-  const input = document.getElementById('userInput').value;
-  const result = convertSentence(input);
-  document.getElementById('output').innerText = result;
+  document.getElementById('caesar_cipherOutput').innerText = caesarCipher(
+    text,
+    shift,
+  );
+});
 // rock paper scissors
 
 function getRandomComputerResult() {
@@ -132,10 +94,10 @@ function showResults(userOption) {
   }
 }
 function resetGame() {
-  playerScore = '0';
-  computerScore = '0';
-  computerScoreSpanElement.innerText = playerScore;
-  playerScoreSpanElement.innerText = computerScore;
+  playerScore = 0;
+  computerScore = 0;
+  computerScoreSpanElement.innerText = computerScore;
+  playerScoreSpanElement.innerText = playerScore;
   winnerMsgElement.innerText = '';
   roundResultsMsg.innerText = '';
 
@@ -159,4 +121,43 @@ paperBtn.addEventListener('click', function () {
 
 scissorsBtn.addEventListener('click', function () {
   showResults('Scissors');
+});
+
+//pig latin
+
+function toPigLatin(word) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const punctuationMatch = word.match(/[.!?]+$/);
+  const punctuation = punctuationMatch ? punctuationMatch[0] : '';
+  const core = punctuation ? word.slice(0, -punctuation.length) : word;
+  const lower = core.toLowerCase();
+
+  if (vowels.includes(lower[0])) {
+    return core + 'way' + punctuation;
+  }
+
+  let consonantClusterEnd = 0;
+  while (
+    consonantClusterEnd < core.length &&
+    !vowels.includes(lower[consonantClusterEnd])
+  ) {
+    consonantClusterEnd++;
+  }
+
+  return (
+    core.slice(consonantClusterEnd) +
+    core.slice(0, consonantClusterEnd) +
+    'ay' +
+    punctuation
+  );
+}
+
+function convertSentence(sentence) {
+  return sentence.split(' ').map(toPigLatin).join(' ');
+}
+
+document.getElementById('convertBtn').addEventListener('click', () => {
+  const input = document.getElementById('userInput').value;
+  const result = convertSentence(input);
+  document.getElementById('output').innerText = result;
 });

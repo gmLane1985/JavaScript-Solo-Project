@@ -15,23 +15,16 @@ h1 {
   margin: 15px 0 20px;
 }
 
-#caesar_section {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-#piglatin {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
 #rps-section {
   width: 80%;
+  margin: 20px auto;
+  padding: 20px;
   background-color: var(--very-dark-blue);
   color: var(--white);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
 }
 
-#caesar_cipherBtn {
 #convertBtn {
   cursor: pointer;
   margin-top: 10px;
@@ -46,13 +39,6 @@ h1 {
   transition: background-image 150ms ease;
 }
 
-#caesar_cipherBtn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
-}
-
-#caesar_cipherBtn:focus-visible {
-  outline: 3px solid var(--white);
-  outline-offset: 2px;
 #convertBtn:hover {
   background-image: linear-gradient(#ffcc4c, #f89808);
 }
@@ -136,6 +122,52 @@ h1 {
 #reset-game-btn {
   display: none;
   margin: 20px auto;
+}
+
+#piglatin {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+#convertBtn {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid var(--golden-yellow);
+  border-radius: 8px;
+  transition: background-image 150ms ease;
+}
+
+#convertBtn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+}
+
+#output {
+  margin-top: 15px;
+  padding: 12px 15px;
+  min-height: 1.2rem;
+  background-color: #1c1c3d;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+#output:empty {
+  display: none;
+  margin: 20px auto;
+  padding: 20px;
 }
 
 footer {
