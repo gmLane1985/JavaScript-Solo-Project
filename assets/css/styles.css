@@ -112,10 +112,17 @@ h1 {
   background-image: linear-gradient(var(--green), var(--bright-green));
   border-color: var(--bright-green);
   border-width: 3px;
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
 }
 
 .rps_btn:hover {
   background-image: linear-gradient(var(--green), var(--bright-green));
+  box-shadow: 0 0 12px rgba(31, 189, 7, 0.55);
+  transform: translateY(-1px);
+  filter: brightness(1.03);
 }
 
 .rps_rules-container {
@@ -188,12 +195,19 @@ h1 {
   background-image: linear-gradient(var(--green), var(--bright-green));
   border: 3px solid var(--bright-green);
   border-radius: 8px;
-  transition: background-image 150ms ease;
+  transition:
+    background-image 150ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
 }
 
 #convertBtn:hover,
 #caesar_cipherBtn:hover {
   background-image: linear-gradient(var(--green), var(--bright-green));
+  box-shadow: 0 0 12px rgba(31, 189, 7, 0.55);
+  transform: translateY(-1px);
+  filter: brightness(1.03);
 }
 
 #output,
