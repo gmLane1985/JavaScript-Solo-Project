@@ -4,38 +4,68 @@ if (copyrightYear) {
   copyrightYear.textContent = new Date().getFullYear();
 }
 
-// -------------------- rock paper scissors --------------------
+// --------------- rock paper scissors lizard spock ---------------
+
 function getRandomComputerResult() {
-  const options = ['Rock', 'Paper', 'Scissors'];
+  const options = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
   const randomIndex = Math.floor(Math.random() * options.length);
   return options[randomIndex];
 }
 
+const winActions = {
+  Rock: {
+    Scissors: 'crushes',
+    Lizard: 'smashes',
+  },
+  Paper: {
+    Rock: 'covers',
+    Spock: 'disproves',
+  },
+  Scissors: {
+    Paper: 'cuts',
+    Lizard: 'decapitates',
+  },
+  Lizard: {
+    Spock: 'poisons',
+    Paper: 'eats',
+  },
+  Spock: {
+    Scissors: 'breaks',
+    Rock: 'vaporizes',
+  },
+};
+
+// --- WIN LOGIC ---
 function hasPlayerWonTheRound(player, computer) {
-  return (
-    (player === 'Rock' && computer === 'Scissors') ||
-    (player === 'Scissors' && computer === 'Paper') ||
-    (player === 'Paper' && computer === 'Rock')
-  );
+  return winActions[player] && winActions[player][computer];
 }
 
 let playerScore = 0;
 let computerScore = 0;
 
+// --- ROUND RESULTS ---
 function getRoundResults(userOption) {
   const computerResult = getRandomComputerResult();
 
+  // Player wins
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `Player wins! ${userOption} beats ${computerResult}`;
-  } else if (computerResult === userOption) {
-    return `It's a tie! Both chose ${userOption}`;
-  } else {
-    computerScore++;
-    return `Computer wins! ${computerResult} beats ${userOption}`;
+    const verb = winActions[userOption][computerResult];
+    return `Player wins! ${userOption} ${verb} ${computerResult}`;
   }
+
+  // Tie
+  if (computerResult === userOption) {
+    return `It's a tie! Both chose ${userOption}`;
+  }
+
+  // Computer wins
+  const verb = winActions[computerResult][userOption];
+  computerScore++;
+  return `Computer wins! ${computerResult} ${verb} ${userOption}`;
 }
 
+// --- DOM ELEMENTS ---
 const playerScoreSpanElement = document.querySelector('#player-score');
 const computerScoreSpanElement = document.querySelector('#computer-score');
 const roundResultsMsg = document.querySelector('#results-msg');
@@ -43,6 +73,7 @@ const winnerMsgElement = document.querySelector('#winner-msg');
 const optionsContainer = document.querySelector('.rps_options-container');
 const resetGameBtn = document.querySelector('#reset-game-btn');
 
+// --- SHOW RESULTS ---
 function showResults(userOption) {
   roundResultsMsg.innerText = getRoundResults(userOption);
   computerScoreSpanElement.innerText = computerScore;
@@ -58,6 +89,7 @@ function showResults(userOption) {
   }
 }
 
+// --- RESET GAME ---
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
@@ -72,6 +104,7 @@ function resetGame() {
 
 resetGameBtn.addEventListener('click', resetGame);
 
+// --- BUTTON EVENT LISTENERS ---
 document.querySelector('#rock-btn').addEventListener('click', () => {
   showResults('Rock');
 });
@@ -82,6 +115,14 @@ document.querySelector('#paper-btn').addEventListener('click', () => {
 
 document.querySelector('#scissors-btn').addEventListener('click', () => {
   showResults('Scissors');
+});
+
+document.querySelector('#lizard-btn').addEventListener('click', () => {
+  showResults('Lizard');
+});
+
+document.querySelector('#spock-btn').addEventListener('click', () => {
+  showResults('Spock');
 });
 
 // -------------------- pig latin --------------------

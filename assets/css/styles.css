@@ -95,9 +95,9 @@ h1 {
   }
 }
 
-/* -------------------- rps section -------------------- */
+/* -------------------- rpsls section -------------------- */
 
-#rps-section {
+#rpsls-section {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
@@ -107,7 +107,7 @@ h1 {
   border-radius: 15px;
 }
 
-.rps_btn {
+.rpsls_btn {
   cursor: pointer;
   width: 100px;
   margin: 10px;
@@ -122,14 +122,14 @@ h1 {
     filter 180ms ease;
 }
 
-.rps_btn:hover {
+.rpsls_btn:hover {
   background-image: linear-gradient(var(--green), var(--bright-green));
   box-shadow: 0 0 12px rgba(31, 189, 7, 0.55);
   transform: translateY(-1px);
   filter: brightness(1.03);
 }
 
-.rps_rules-container {
+.rpsls_rules-container {
   padding: 10px 0;
   margin: auto;
   border-radius: 15px;
@@ -138,32 +138,32 @@ h1 {
   color: var(--very-dark-blue);
 }
 
-.rps_rules-container ul {
+.rpsls_rules-container ul {
   list-style-type: none;
 }
 
-.rps_rules-container p {
+.rpsls_rules-container p {
   margin: 10px 0;
 }
 
 @media (min-width: 760px) {
-  .rps_rules-container {
+  .rpsls_rules-container {
     width: 60%;
   }
 }
 
-.rps_score-container {
+.rpsls_score-container {
   display: flex;
   justify-content: space-around;
   margin: 30px 0;
   font-size: 1.2rem;
 }
 
-.rps_score {
+.rpsls_score {
   font-weight: 500;
 }
 
-.rps_results-container {
+.rpsls_results-container {
   font-size: 1.3rem;
   margin: 15px 0;
 }
