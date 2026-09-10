@@ -15,6 +15,10 @@ h1 {
   margin: 15px 0 20px;
 }
 
+#caesar_section {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
 #piglatin {
   width: 80%;
   margin: 20px auto;
@@ -27,6 +31,7 @@ h1 {
   border-radius: 15px;
 }
 
+#caesar_cipherBtn {
 #convertBtn {
   cursor: pointer;
   margin-top: 10px;
@@ -41,6 +46,13 @@ h1 {
   transition: background-image 150ms ease;
 }
 
+#caesar_cipherBtn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+}
+
+#caesar_cipherBtn:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
 #convertBtn:hover {
   background-image: linear-gradient(#ffcc4c, #f89808);
 }
